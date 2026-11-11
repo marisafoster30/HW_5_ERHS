@@ -17,6 +17,7 @@ list.files("../data")
 
 
 ```{r}
-
+library(tidyverse)
+read.csv()
 ```
 
