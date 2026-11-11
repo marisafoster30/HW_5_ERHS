@@ -1,0 +1,18 @@
+---
+title: "MF_HW_5_ERHS_535"
+author: "Marisa Foster"
+date: "2026-11-11"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+list.files("../data")
+```
+
+
