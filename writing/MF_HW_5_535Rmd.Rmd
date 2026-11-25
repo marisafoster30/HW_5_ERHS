@@ -23,5 +23,15 @@ list.files("../data")
 ```{r}
 homicides <- read.csv("../data/homicide-data.csv")
 head(homicides)
+
+```
+```{r}
+
+library(tidyverse)
+
+baltimore_data <- homicides %>% 
+  filter(city == "Baltimore")
+baltimore_data
+
 ```
 
