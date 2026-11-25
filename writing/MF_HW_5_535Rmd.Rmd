@@ -21,6 +21,7 @@ list.files("../data")
 ```
 
 ```{r}
+
 homicides <- read.csv("../data/homicide-data.csv")
 head(homicides)
 
@@ -33,11 +34,18 @@ library(lubridate)
 baltimore_data <- homicides %>% 
   filter(city == "Baltimore") %>% 
   mutate(date = ymd(reported_date),
+         month = month(date),
+         year = year(date),
          season = if_else(month(date) >= 5 & month(date) <= 10,
-                          "Summer", "Winter"))
-
+                          "Summer", "Winter")) 
 baltimore_data
-
+```
+```{r}
+  
+total_homicides <- baltimore_data %>% 
+  group_by(year, month, season) %>% 
+  summarise(homicides = n())
+total_homicides
 ```
 
 
