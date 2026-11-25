@@ -28,10 +28,20 @@ head(homicides)
 ```{r}
 
 library(tidyverse)
+library(lubridate)
 
 baltimore_data <- homicides %>% 
-  filter(city == "Baltimore")
+  filter(city == "Baltimore") %>% 
+  mutate(date = ymd(reported_date),
+         season = if_else(month(date) >= 5 & month(date) <= 10,
+                          "Summer", "Winter"))
+
 baltimore_data
+
+```
+
+
+```{r}
 
 ```
 
