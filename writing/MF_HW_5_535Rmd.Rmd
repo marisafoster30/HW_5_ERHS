@@ -17,7 +17,11 @@ list.files("../data")
 
 
 ```{r}
-library(tidyverse)
-read.csv()
+
+```
+
+```{r}
+homicides <- read.csv("../data/homicide-data.csv")
+head(homicides)
 ```
 
